@@ -3,5 +3,9 @@ services:
     name: real-water-backend
     runtime: python
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn water_delivery_app.water_delivery_app.wsgi:application
-    env: python
+    startCommand: gunicorn water_delivery_app.wsgi:application
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: water_delivery_app.settings
+      - key: PYTHON_VERSION
+        value: 3.11
