@@ -2,6 +2,6 @@ services:
   - type: web
     name: real-water-backend
     runtime: python
-    buildCommand: "pip install -r requirements.txt"
-    startCommand: "gunicorn water_delivery_app.water_delivery_app.wsgi:application"
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn water_delivery_app.water_delivery_app.wsgi:application
     env: python
